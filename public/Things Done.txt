@@ -1,0 +1,17 @@
+Megjelenítési Animáció A legelején.
+Szövegre kattintással is Megnyílik már a menü.
+Szövegek átírása (picit).
+A fejléc Átalakítása, Új gomb implementálása (x gomb).
+A Legelső Üzenet átalakítása. (Botüzenet - Gombok)
+Gombok Stílusa.
+Beviteli mező Stílusa, Beküldés Gomb Stílusa
+Beviteli mező (Lezárt) Stílusa, Beküldés Gomb (Lezárt) Stílusa
+Beviteli mező és beküldés gomb lezárása Leadás után
+Program optimalizálás (Addeventlistenereket eddig mindig hozzáadta, mostmár csak egyszer fogja.)
+Igen/Nem gombok hozzáadása, stílusának elkészítése
+Pici elírások javítása a szövegben
+Írás Effekt elkészítése, stílusa, hozzáadása
+Spam levédése
+A stílus pici problémáinak megoldása (elcsúszások, igazítások)
+Chatbox Reszponzivitás.
+Eredmények tábla Reszponzivitás.
