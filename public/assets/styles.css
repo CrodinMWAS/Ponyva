@@ -389,9 +389,11 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2%;
   box-sizing: border-box;
+  overflow-y: scroll;
+  min-height: 35px;
 }
 
 .summary-container{
@@ -412,6 +414,10 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+#buttons #editButton{
+  position: relative;
 }
 
 #results #sendButton{
@@ -498,41 +504,18 @@ body{
   }
 }
 
-@media screen and (max-height: 700px) and (orientation: portrait){
-  #resultContent{
-    padding-top: 100% !important;
-  }
-}
-
-@media screen and (max-height: 600px) and (orientation: portrait){
-  #resultContent{
-    padding-top: 140% !important;
-  }
-}
-
-@media screen and (max-height: 320px) and (orientation: portrait){
-  #resultContent{
-    padding-top: 220% !important;
-  }
-}
-
-
-@media screen and (max-height: 220px) and (orientation: portrait){
-  #resultContent{
-    padding-top: 425% !important;
-  }
-}
-
 @media screen and (max-width: 768px)  and (orientation: portrait){
   #chatbox{
       width: 80%;
   }
   #resultContent{
     width: 90%;
-    overflow-y: scroll;
   }
   .summary-container p{
     width: 40%;
+  }
+  #results{
+    height: 100% !important;
   }
 }
 
@@ -558,7 +541,6 @@ body{
   }
   #resultContent{
     width: 95%;
-    padding-top: 15%; 
   }
 }
 
@@ -567,9 +549,7 @@ body{
     justify-content: flex-start;
   }
   #resultContent{
-    padding-top: 50%;
     height: 80%;
-    overflow-y: scroll;
   }
   #results h1{
     margin: 10px;
@@ -588,9 +568,6 @@ body{
   }
   .summary-container input{
     width: 30%;
-  }
-  #resultContent{
-    padding-top: 75%;
   }
   #buttons{
     flex-direction: column;
@@ -614,11 +591,15 @@ body{
 
 /*----------  LandScape  ----------*/
 
-@media screen and (max-width: 800px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 65%;
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+  .summary-container input{
+    width: 40%;
+  }
+  .summary-container p{
+    width: 40%;
   }
 }
+
 
 @media screen and (max-height: 768px) and (orientation: landscape) {
   #chatbox{
@@ -645,26 +626,14 @@ body{
   #results h1{
     margin: 1%;
   }
-  #resultContent{
-    padding-top: 15%;
-    overflow-y: scroll;
-  }
-}
-
-@media screen and (max-height: 620px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 35%;
-  }
 }
 
 @media screen and (max-height: 525px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 65%;
-  }
   .summary-container input{
     width: 50%;
   }
   #results{
+    margin: 0;
     height: 100vh !important;
   }
 }
@@ -686,7 +655,6 @@ body{
     margin: 5px;
   }
   #resultContent{
-    padding-top: 45%;
     width: 95% !important;
   }
   .summary-container input{
@@ -733,24 +701,12 @@ body{
   #buttons button{
     padding: 2%;
   }
-  #resultContent{
-    padding-top: 55%;
-  }
   #results h1{
     font-size: large;
   }
 }
 
-@media screen and (max-height: 300px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 115%;
-  }
-}
-
 @media screen and (max-height: 200px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 215%;
-  }
   #buttons{
     flex-direction: column;
   }
