@@ -1,4 +1,4 @@
-import { showUserInput } from "./helpers/helperFunctions.js";
+import { hideUserInput } from "./helpers/helperFunctions.js";
 import { supportDataArray, measurementDatasArray, interestDataArray } from "./models/chatBotModels.js";
 import { setIsOptionSelected } from "./script.js";
 
@@ -15,8 +15,8 @@ export function showSummary(DataObject, questionArray) {
         return;
     }
 
-    //resetting userinput
-    showUserInput()
+    //Locking userinput
+    hideUserInput()
 
     let summaryText = '';
     Object.keys(DataObject).forEach((key, index) => {

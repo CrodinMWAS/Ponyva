@@ -68,19 +68,19 @@ export const OfferHandler = (userMessage) => {
         tarpHeights += userMessage
         setTimeout(() => {
           displayButtons(["Igen","Nem"])
-          hideUserInput();
         }, 1100);
       }
     }
 
     // Door:
-    if (currentQuestionIndex >= 5 && (currentQuestionIndex - 5) % 4 === 0) {
-      const lowerCaseMessage = userMessage.toLowerCase();
-      if ((lowerCaseMessage != 'igen') && (lowerCaseMessage != 'nem')) {
-        addMessage('Kérem igennel vagy nemmel válaszoljon', true);
-        return;
-      }
-    }
+    //Logically inaccessible, logically removed.
+    // if (currentQuestionIndex >= 5 && (currentQuestionIndex - 5) % 4 === 0) {
+    //   const lowerCaseMessage = userMessage.toLowerCase();
+    //   if ((lowerCaseMessage != 'igen') && (lowerCaseMessage != 'nem')) {
+    //     addMessage('Kérem igennel vagy nemmel válaszoljon', true);
+    //     return;
+    //   }
+    // }
 
     // Color:
     if (currentQuestionIndex >= 6 && (currentQuestionIndex - 6) % 4 === 0) {

@@ -1,5 +1,5 @@
 Megjelenítési Animáció A legelején.
-Szövegre kattintással is Megnyílik már a menü.
+A "Segíthetünk" Szövegre kattintással is Megnyílik már a menü.
 Szövegek átírása (picit).
 A fejléc Átalakítása, Új gomb implementálása (x gomb).
 A Legelső Üzenet átalakítása. (Botüzenet - Gombok)
@@ -7,11 +7,16 @@ Gombok Stílusa.
 Beviteli mező Stílusa, Beküldés Gomb Stílusa
 Beviteli mező (Lezárt) Stílusa, Beküldés Gomb (Lezárt) Stílusa
 Beviteli mező és beküldés gomb lezárása Leadás után
-Program optimalizálás (Addeventlistenereket eddig mindig hozzáadta, mostmár csak egyszer fogja.)
+Program optimalizálás (Addeventlistenereket eddig mindig hozzáadta, mostmár csak egyszer fogja, A megváltozott körülményekhez kapcsolódó (gombok írott válasz helyett) optimalizálása.)
 Igen/Nem gombok hozzáadása, stílusának elkészítése
 Pici elírások javítása a szövegben
 Írás Effekt elkészítése, stílusa, hozzáadása
 Spam levédése
 A stílus pici problémáinak megoldása (elcsúszások, igazítások)
+
 Chatbox Reszponzivitás.
 Eredmények tábla Reszponzivitás.
+
+HibaJavítás: Eddig ha a chatről lekattintottam, és vissza, akkor továbbhaladt a kérdéssel, viszont mostmár nem fog.
+HibaJavítás: Azután hogy kitöltöttem a kérdéseket és behozta az "összegzőt", ha a chatről lekattintottam, és vissza, akkor újra feldobta az "összegzőt", mostmár nem fogja.
+HibaJavítás: Az utolsó Kérdés-válasz után már nem lehet írni.

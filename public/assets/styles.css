@@ -22,6 +22,7 @@ body{
   outline: 2px solid var(--blackColor);
   transition: all 0.3s ease-in-out;
   border: none;
+  user-select: none;
 }
 
 .button:hover{
@@ -53,11 +54,11 @@ body{
   padding: 5px;
   border-radius: 50px;
   background-color: var(--redColor);
-  /* display: flex; */
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
-  /* animation: popIn 0.3s ease-in-out both 3s; */
+  /* display: none; */
+  animation: popIn 0.3s ease-in-out both 3s;
   user-select: none;
 }
 
@@ -261,7 +262,7 @@ body{
   background-color: var(--redColor);
   border-radius: 50%;
   opacity: 0;
-  /* animation: popIn 0.3s ease-in-out both 2s; */
+  animation: popIn 0.3s ease-in-out both 2s;
 }
 
 #chatbot-icon svg{

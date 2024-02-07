@@ -41,7 +41,7 @@ export const MeasurementHandler = (userMessage) => {
             break;
         case 9:
             //Measurement Date
-            validateDate(userMessage) ? (measurementDatasArray.measurementDate = userMessage, askNextQuestion(), replaceSelectWithInput(inputField), hideUserInput(), setTimeout(() => {displayButtons(tarpTypes,0)}, 1100)) : addMessage("Kérem valós dátumot adjon meg!", true)
+            validateDate(userMessage) ? (measurementDatasArray.measurementDate = userMessage, askNextQuestion(), replaceSelectWithInput(inputField), setTimeout(() => {displayButtons(tarpTypes,0)}, 1100)) : addMessage("Kérem valós dátumot adjon meg!", true)
             break;
             //Case 10 Logically Inaccesible, logically removed.
         // case 10:

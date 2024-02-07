@@ -16,22 +16,11 @@ const chatbox = document.querySelector('.chatbox');
 export let currentQuestions;
 export let currentQuestionIndex = 0;
 export let isOptionSelected = false;
-let watchMouseMove = true;
 let isWriting = false;
 
 export function setIsOptionSelected(value){
   isOptionSelected = value
 }
-
-//Start Animations on userInput
-window.addEventListener("mousemove", function () {
-  if (watchMouseMove) {
-    watchMouseMove = false;
-    document.getElementById('help').classList.add("popInDelay");
-    chatbotIcon.classList.add("popIn");
-    document.getElementById('help').style.display = 'flex';
-  }
-})
 
 //Send button and send with enter key
 sendBtn.addEventListener('click', handleUserInput);
@@ -45,16 +34,15 @@ userInput.addEventListener('keydown', function (e) {
 //Clickable chatbot icon
 function showChat() {
   if (chatbox.style.display === 'block') {
-    watchMouseMove = true;
     chatbox.style.display = 'none';
     document.getElementById('help').style.display = 'flex';
   } else {
-    watchMouseMove = false;
     chatbox.style.display = 'block';
     document.getElementById('help').style.display = 'none';
-    // You can initiate the chat sequence here if needed:
-    // setTimeout(() => askNextQuestion(), 1000);
-    askNextQuestion()
+    // First Chat mssg:
+    if (currentQuestionIndex == 0) {
+      askNextQuestion()
+    }
   }
 }
 
@@ -96,7 +84,7 @@ export function addMessage(message, isBot) {
     typingIndicator.style.display = "flex";
     chatContent.appendChild(typingIndicator)
 
-    //Scroll to top
+    //Scroll to the bottom
     chatContent.scrollTop = chatContent.scrollHeight;
 
     //Remove the type effect, the spam protection and adding the message
@@ -107,8 +95,8 @@ export function addMessage(message, isBot) {
       // Scroll to the bottom
       chatContent.scrollTop = chatContent.scrollHeight;
       isWriting = false
-      //if its the first question don't reenable the input field & btn
-      if (currentQuestions != menuButtons) {
+      //if its the first question or info about the current sales don't reenable the input field & btn
+      if (currentQuestions != menuButtons && currentQuestions != saleQuestions) {
         showUserInput()
         document.getElementsByClassName("user-input-parent")[0].children[0].focus()
       }
@@ -239,23 +227,27 @@ function handleMainMenuSelection(buttonId) {
 
 //function that goes to the next question
 export function askNextQuestion() {
-  
+
   if (currentQuestionIndex < currentQuestions.length) {
     addMessage(currentQuestions[currentQuestionIndex], true)
     currentQuestionIndex++;
     return;
   }
 
+  hideUserInput()
 
   switch (currentQuestions) {
     case freeMeasurementQuestions:
       showSummary(measurementDatasArray, freeMeasurementQuestions)
+
       break;
     case supportQuestions:
       showSummary(supportDataArray, supportQuestions)
+
       break;
     case interestQuestions:
       showSummary(interestDataArray, interestQuestions)
+
       break;
   }
 }

@@ -112,7 +112,8 @@ function setMeasurmentData(e){
     askNextQuestion();
 }
 
-//This function is run where there are Yes No btns
+//This function is run by the Yes & No btns
+//This is where you can handle their value.
 function setDoorData(e){
     console.log(e.srcElement.innerHTML)
     askNextQuestion();
@@ -137,4 +138,5 @@ export function displayButtons(content,type){
     btnDiv.classList.add('btn-message')
     chatContent.appendChild(btnDiv)
     chatContent.scrollTop = chatContent.scrollHeight;
+    hideUserInput();
 }
