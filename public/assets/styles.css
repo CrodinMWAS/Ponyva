@@ -91,6 +91,7 @@ body{
   bottom: 110px;
   right: 40px;
   animation: popIn 0.3s ease-in-out;
+  z-index: 49;
 }
 /*----------  Header  ----------*/
 .chat-header{
@@ -348,6 +349,7 @@ body{
   /* display: flex; */
   align-items: center;
   justify-content: center; 
+  z-index: 48;
 }
 
 #results::-webkit-scrollbar { 
@@ -372,6 +374,7 @@ body{
   color: var(--blackColor);
   box-sizing: border-box;
   animation: expand 0.8s ease-in-out forwards;
+  z-index: 50;
 }
 
 #results h1{
@@ -386,9 +389,11 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2%;
   box-sizing: border-box;
+  overflow-y: scroll;
+  min-height: 35px;
 }
 
 .summary-container{
@@ -409,6 +414,10 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+#buttons #editButton{
+  position: relative;
 }
 
 #results #sendButton{
@@ -485,8 +494,8 @@ body{
 
 /*----------  Media Queries  ----------*/
 
-/*----------  Width  ----------*/
-@media screen and (max-width: 1024px) {
+/*----------  Portrait  ----------*/
+@media screen and (max-width: 1024px)  and (orientation: portrait){
   #chatbox{
       width: 60%;
   }
@@ -495,7 +504,7 @@ body{
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px)  and (orientation: portrait){
   #chatbox{
       width: 80%;
   }
@@ -505,12 +514,15 @@ body{
   .summary-container p{
     width: 40%;
   }
+  #results{
+    height: 100% !important;
+  }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px)  and (orientation: portrait){
   #chatbox{
       width: 100%;
-      height: calc(100% - 100px);
+      height: 100%;
       top: 0px;
       right: 0;
   }
@@ -525,21 +537,19 @@ body{
   }
   #results{
     width: 100% !important;
-    height: calc(100% - 120px) !important;
+    height: 100% !important;
   }
   #resultContent{
     width: 95%;
   }
 }
 
-@media screen and (max-width: 365px){
+@media screen and (max-width: 365px) and (orientation: portrait){
   #results{
     justify-content: flex-start;
   }
   #resultContent{
-    padding-top: 50%;
     height: 80%;
-    overflow-y: scroll;
   }
   #results h1{
     margin: 10px;
@@ -548,8 +558,7 @@ body{
     width: 50%;
   }
 }
-
-@media screen and (max-width: 330px){
+@media screen and (max-width: 330px) and (orientation: portrait){
   #buttons button{
     padding: 3%;
   }
@@ -560,9 +569,6 @@ body{
   .summary-container input{
     width: 30%;
   }
-  #resultContent{
-    padding-top: 75%;
-  }
   #buttons{
     flex-direction: column;
     height: 15%;
@@ -570,26 +576,37 @@ body{
   }
 }
 
-@media screen and (max-width: 320px){
+
+@media screen and (max-width: 320px) and (orientation: portrait){
   .chatbot-header-icon{
     width: 0;
   }
-}
-
-/*----------  Height  ----------*/
-/* TODO EZ NEM KIFINOMULT */
-@media screen and (max-height: 768px) and (min-height:640px) {
-  #results{
-    padding-top: 50%;
-    height: 100vh !important;
+  #botName h1{
+    font-size: larger;
+  }
+  #botName h2{
+    font-size: large;
   }
 }
 
-@media screen and (max-height: 750px) and (orientation: landscape) {
+/*----------  LandScape  ----------*/
+
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+  .summary-container input{
+    width: 40%;
+  }
+  .summary-container p{
+    width: 40%;
+  }
+}
+
+
+@media screen and (max-height: 768px) and (orientation: landscape) {
   #chatbox{
     height: 100%;
     bottom: 0;
     right: 120px;
+    width: 75vw !important;
   }
   .message{
     width: 75%;
@@ -609,21 +626,15 @@ body{
   #results h1{
     margin: 1%;
   }
-  #resultContent{
-    padding-top: 5%;
-    overflow-y: scroll;
-  }
-  
-}
-@media screen and (max-height: 620px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 10%;
-  }
 }
 
 @media screen and (max-height: 525px) and (orientation: landscape) {
-  #resultContent{
-    padding-top: 15%;
+  .summary-container input{
+    width: 50%;
+  }
+  #results{
+    margin: 0;
+    height: 100vh !important;
   }
 }
 
@@ -643,14 +654,26 @@ body{
   #results h1{
     margin: 5px;
   }
-  #chatbot-icon{
-    z-index: -5;
+  #resultContent{
+    width: 95% !important;
+  }
+  .summary-container input{
+    width: 30%;
+  }
+  #botName h1{
+    font-size: large;
+  }
+  #botName h2{
+    font-size: medium;
   }
 }
 
-@media screen and (max-height: 350px) {
-  #results{
-    height: 100vh !important;
+@media screen and (max-height: 350px) and (orientation: landscape) {
+  .chatbot-header-icon{
+    display: none;
+  }
+  #chatbox{
+    width: 70vw !important;
   }
 }
 
@@ -658,33 +681,37 @@ body{
   #buttons button{
     padding: 1%;
   }
+  #chatbox{
+    right: 0;
+    width: 100vw !important;
+  }
+  #botName h1{
+    font-size: small;
+  }
+  #botName h2{
+    font-size: x-small;
+  }
 }
 
 @media screen and (max-height: 350px) and (orientation: landscape) {
   #results{
     width: 100vw !important;
+    height: 100vh !important;
   }
   #buttons button{
-    padding: 1%;
+    padding: 2%;
+  }
+  #results h1{
+    font-size: large;
   }
 }
 
-
-/*=====  Combined  ======*/
-
-@media screen and (max-height: 750px) and (max-width: 550px) {
-  #chatbox{
-    right: 0px;
+@media screen and (max-height: 200px) and (orientation: landscape) {
+  #buttons{
+    flex-direction: column;
   }
-  #chatbot-icon{
-    z-index: -50;
-  }
-}
-
-@media screen and (max-height: 300px) and (max-width: 300px) {
-  #chatbox{
-    width: 100%;
-    height: 100%;
+  #results h1{
+    font-size: medium;
   }
 }
 
