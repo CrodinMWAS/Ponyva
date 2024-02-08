@@ -32,19 +32,15 @@ body{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
+.wideBtn{
+  align-self: center;
+  width: 75%;
+  margin-bottom: 5%;
+}
 /*=============================
 =            Lander            =
 ===============================*/
 /*----------  Message on top  ----------*/
-
-.popIn{
-  animation: popIn 0.3s ease-in-out both;
-}
-
-.popInDelay{
-  animation: popIn 0.3s ease-in-out both 0.5s;
-}
-
 #help{
   position: fixed;
   bottom: 110px;
@@ -63,9 +59,33 @@ body{
 }
 
 #help-text {
+  font-size: medium;
   cursor: pointer;
   font-weight: bold;
 }
+
+/*----------  Chaticon  ----------*/
+
+#chatbot-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
+  cursor: pointer;
+  background-color: var(--redColor);
+  border-radius: 50%;
+  opacity: 0;
+  animation: popIn 0.3s ease-in-out both 2s;
+}
+
+#chatbot-icon svg{
+  width: 100%;
+  height: 100%;
+  fill: var(--whiteColor);
+} 
+
 
 #lip {
   width: 0;
@@ -233,7 +253,7 @@ body{
   align-items: flex-end;
 }
 
-.btn-message button{
+.btn-message button, .wideBtn{
   border-radius: 5px;
   padding: 8px !important;
   background-color: var(--whiteColor) !important;
@@ -249,28 +269,6 @@ body{
   background-color: var(--blackColor) !important;
   color: var(--whiteColor) !important;
 }
-
-/*----------  Chaticon  ----------*/
-
-#chatbot-icon {
-  position: fixed;
-  bottom: 10px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  padding: 15px;
-  cursor: pointer;
-  background-color: var(--redColor);
-  border-radius: 50%;
-  opacity: 0;
-  animation: popIn 0.3s ease-in-out both 2s;
-}
-
-#chatbot-icon svg{
-  width: 100%;
-  height: 100%;
-  fill: var(--whiteColor);
-} 
 
 /*----------  User Input  ----------*/
 .user-input-parent{
@@ -506,7 +504,7 @@ body{
 
 @media screen and (max-width: 768px)  and (orientation: portrait){
   #chatbox{
-      width: 80%;
+    width: 80%;
   }
   #resultContent{
     width: 90%;
@@ -516,6 +514,19 @@ body{
   }
   #results{
     height: 100% !important;
+  }
+}
+
+@media screen and (max-width: 700px)  and (orientation: portrait){
+  #chatbot-icon{
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+  }
+  #help{
+    bottom: 85px;
+    right: 28px;
+    padding: 2px;
   }
 }
 
@@ -541,6 +552,16 @@ body{
   }
   #resultContent{
     width: 95%;
+  }
+  #help{
+    width: 100px;
+    bottom: 85px;
+    right: 28px;
+    padding: 2px;
+  }
+  #help-text{
+    font-size: small;
+    margin: 0;
   }
 }
 
@@ -573,6 +594,18 @@ body{
     flex-direction: column;
     height: 15%;
     gap: 10px;
+  }
+  #chatbot-icon{
+    width: 25px;
+    height: 25px;
+    padding: 8px;
+  }
+  #help{
+    width: 85px;
+    height: 25px;
+    bottom: 65px;
+    right: 21px;
+    padding: 2px;
   }
 }
 
@@ -626,6 +659,16 @@ body{
   #results h1{
     margin: 1%;
   }
+  #chatbot-icon{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
+  #help{
+    bottom: 85px;
+    right: 30px;
+    padding: 2px;
+  }
 }
 
 @media screen and (max-height: 525px) and (orientation: landscape) {
@@ -635,6 +678,23 @@ body{
   #results{
     margin: 0;
     height: 100vh !important;
+  }
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  #chatbot-icon{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  }
+  #help{
+    width: 100px;
+    bottom: 80px;
+    right: 25px;
+    padding: 2px;
+  }
+  #help-text{
+    font-size: small;
   }
 }
 
@@ -690,6 +750,14 @@ body{
   }
   #botName h2{
     font-size: x-small;
+  }
+  #chatbot-icon{
+    width: 35px;
+    height: 35px;
+    padding: 10px;
+  }
+  #help{
+    display: none;
   }
 }
 

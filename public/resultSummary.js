@@ -8,11 +8,20 @@ const resultDiv = document.getElementById('results')
 const doneButton = document.getElementById('sendButton')
 const editButton = document.getElementById("editButton")
 
-
 export function showSummary(DataObject, questionArray) {
     if (!resultSummary) {
         console.error('The "offer-summary" element was not found in the DOM. Make sure it exists.');
         return;
+    } 
+    const chatContent = document.getElementById('chat-content');
+    if (chatContent.children[chatContent.children.length - 1].classList.contains("message")) {
+        let button = document.createElement("button")
+        button.className = "button wideBtn"
+        button.innerText = "Összegző";
+        button.onclick = () => {showSummary(DataObject, questionArray)}
+        chatContent.appendChild(button)
+        // Scroll to the bottom
+        chatContent.scrollTop = chatContent.scrollHeight;
     }
 
     //Locking userinput

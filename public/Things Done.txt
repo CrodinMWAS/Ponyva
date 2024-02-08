@@ -15,8 +15,9 @@ Spam levédése
 A stílus pici problémáinak megoldása (elcsúszások, igazítások)
 
 Chatbox Reszponzivitás.
-Eredmények tábla Reszponzivitás.
+Eredmények tábla / Összegző Reszponzivitás.
 
 HibaJavítás: Eddig ha a chatről lekattintottam, és vissza, akkor továbbhaladt a kérdéssel, viszont mostmár nem fog.
 HibaJavítás: Azután hogy kitöltöttem a kérdéseket és behozta az "összegzőt", ha a chatről lekattintottam, és vissza, akkor újra feldobta az "összegzőt", mostmár nem fogja.
 HibaJavítás: Az utolsó Kérdés-válasz után már nem lehet írni.
+Új Gomb hozzáadása: Összegző Gomb az utolsó Kérdés-válasz után bekerül a chatbe és az összegzőt fogja felhozni.
