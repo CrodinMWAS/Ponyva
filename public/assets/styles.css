@@ -579,6 +579,7 @@ body{
     width: 50%;
   }
 }
+
 @media screen and (max-width: 330px) and (orientation: portrait){
   #buttons button{
     padding: 3%;
@@ -595,17 +596,9 @@ body{
     height: 15%;
     gap: 10px;
   }
-  #chatbot-icon{
-    width: 25px;
-    height: 25px;
-    padding: 8px;
-  }
   #help{
-    width: 85px;
-    height: 25px;
-    bottom: 65px;
-    right: 21px;
-    padding: 2px;
+    display: none !important;
+    animation: none;
   }
 }
 
@@ -622,6 +615,13 @@ body{
   }
 }
 
+@media screen and (max-width: 300px) and (orientation: portrait){
+  #chatbot-icon{
+    width: 25px ;
+    height: 25px ;
+    padding: 8px ;
+  }
+}
 /*----------  LandScape  ----------*/
 
 @media screen and (max-width: 1000px) and (orientation: landscape) {
@@ -757,7 +757,8 @@ body{
     padding: 10px;
   }
   #help{
-    display: none;
+    display: none !important;
+    animation: none;
   }
 }
 
