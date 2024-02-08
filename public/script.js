@@ -69,9 +69,11 @@ export function addMessage(message, isBot) {
   }
   const chatContent = document.getElementById('chat-content');
   const messageDiv = document.createElement('div');
+  let h3 = document.createElement('h3');
+  h3.innerText = message
 
   messageDiv.classList.add('message');
-  messageDiv.innerHTML = message;
+  messageDiv.appendChild(h3)
   if (isBot && !isWriting) {
     messageDiv.classList.add('bot-message')
 
