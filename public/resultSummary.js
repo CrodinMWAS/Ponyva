@@ -1,6 +1,6 @@
 import { hideUserInput } from "./helpers/helperFunctions.js";
 import { supportDataArray, measurementDatasArray, interestDataArray } from "./models/chatBotModels.js";
-import { setIsOptionSelected } from "./script.js";
+import { setIsOptionSelected, newChat } from "./script.js";
 
 //TODO: megcsinálni megint 
 const resultSummary = document.getElementById('resultContent');
@@ -13,19 +13,12 @@ export function showSummary(DataObject, questionArray) {
         console.error('The "offer-summary" element was not found in the DOM. Make sure it exists.');
         return;
     } 
-    const chatContent = document.getElementById('chat-content');
-    if (chatContent.children[chatContent.children.length - 1].classList.contains("message")) {
-        let button = document.createElement("button")
-        button.className = "button wideBtn"
-        button.innerText = "Összegző";
-        button.onclick = () => {showSummary(DataObject, questionArray)}
-        chatContent.appendChild(button)
-        // Scroll to the bottom
-        chatContent.scrollTop = chatContent.scrollHeight;
-    }
 
     //Locking userinput
     hideUserInput()
+
+    chatbox.style.display = 'none';
+    document.getElementById('help').style.display = 'flex';
 
     let summaryText = '';
     Object.keys(DataObject).forEach((key, index) => {
@@ -57,8 +50,30 @@ export function showSummary(DataObject, questionArray) {
         inputs.forEach(input => input.classList.remove("enabledInput"));
         inputs.forEach(input => input.readOnly = true);
         isEditable = false
+
+        chatbox.style.display = 'block';
+        document.getElementById('help').style.display = 'none';
+
         setIsOptionSelected(false);
         const URL = "http://localhost:8080/"
+
+        const chatContent = document.getElementById('chat-content');
+        if (chatContent.children[chatContent.children.length - 1].classList.contains("message")) {
+            let buttonBack = document.createElement("button")
+            buttonBack.className = "button wideBtn"
+            buttonBack.innerText = "Összegző";
+            buttonBack.onclick = () => {showSummary(DataObject, questionArray)}
+            chatContent.appendChild(buttonBack)
+            let button = document.createElement("button")
+            button.className = "button wideBtn"
+            button.innerText = "Új Chat Indítása"
+            button.onclick = () => {newChat(DataObject)}
+            chatContent.appendChild(button)
+            
+            // Scroll to the bottom
+            chatContent.scrollTop = chatContent.scrollHeight;
+        }
+
         switch(DataObject) {
             case measurementDatasArray: 
                 sendJsonData(measurementDatasArray, URL, "setMeasurementData")

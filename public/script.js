@@ -16,7 +16,7 @@ const chatbox = document.querySelector('.chatbox');
 export let currentQuestions;
 export let currentQuestionIndex = 0;
 export let isOptionSelected = false;
-let isWriting = false;
+export let isWriting = false;
 
 export function setIsOptionSelected(value){
   isOptionSelected = value
@@ -32,7 +32,7 @@ userInput.addEventListener('keydown', function (e) {
 
 
 //Clickable chatbot icon
-function showChat() {
+export function showChat() {
   if (chatbox.style.display === 'block') {
     chatbox.style.display = 'none';
     document.getElementById('help').style.display = 'flex';
@@ -244,10 +244,25 @@ export function askNextQuestion() {
       break;
     case supportQuestions:
       showSummary(supportDataArray, supportQuestions)
-      console.log(`showSummary(${supportDataArray}, supportQuestions)`)
       break;
     case interestQuestions:
       showSummary(interestDataArray, interestQuestions)
       break;
   }
+}
+
+//Resets Everything in order to start a new chat
+export function newChat(DataObject){
+  Object.keys(DataObject).forEach(element => {
+      delete DataObject[element];
+  });
+  currentQuestionIndex = 0;
+  currentQuestions = menuQuestions;
+  isOptionSelected = false;
+  isWriting = false;
+  document.getElementById("chatbox").appendChild(document.getElementsByClassName("typing-animation")[0])
+  while (chatContent.firstChild) {
+      chatContent.removeChild(chatContent.firstChild);
+  }
+  showChat();
 }

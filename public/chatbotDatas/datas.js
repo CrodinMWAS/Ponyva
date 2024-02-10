@@ -24,7 +24,6 @@ export const menuButtons = [
     "Jász-Nagykun-Szolnok vármegye",
     "Komárom-Esztergom vármegye",
     "Nógrád vármegye",
-    "Pest vármegye",
     "Somogy vármegye",
     "Szabolcs-Szatmár-Bereg vármegye",
     "Tolna vármegye",

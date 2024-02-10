@@ -21,6 +21,9 @@ HibaJavítás: Azután hogy kitöltöttem a kérdéseket és behozta az "összeg
 HibaJavítás: Az utolsó Kérdés-válasz után már nem lehet írni.
 HibaJavítás: Divbe került eddig a szöveg, mostmár nem.
 HibaJavítás: A Kuldes Gomb Visszaállítja az adatvaltoztatos gombot
-Új Gomb hozzáadása: Összegző Gomb az utolsó Kérdés-válasz után bekerül a chatbe és az összegzőt fogja felhozni.
+HibaJavítás: A megyék között 2x szerepelt Pest
 
 Egyértelműsítés: Ha telefonszámot kér be a bot, akkor eleve megjelenik a "+36"
+Új Funkció: Chat Bezár az összegző mutatásakor, és megnyílik amikor leadjuk.
+Új Gomb hozzáadása: Összegző Gomb bekerül a chatbe és az összegzőt fogja felhozni.
+Új Funkció: Új chat létrehozása azután hogy leadtuk az összegzőt.

@@ -1,4 +1,4 @@
-import { askNextQuestion, handleUserInput } from "../script.js";
+import { askNextQuestion, handleUserInput, currentQuestionIndex, isOptionSelected, isWriting, chatContent, showChat} from "../script.js";
 import { measurementDatasArray } from "../models/chatBotModels.js";
 
 function enforcePhoneNumberFormat(event) {
