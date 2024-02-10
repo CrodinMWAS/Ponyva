@@ -389,7 +389,7 @@ body{
 
 #resultContent{
   outline: 2px solid var(--blackColor);
-  width: 50%;
+  width: 75%;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -409,7 +409,12 @@ body{
   align-items: center;
 }
 
+.summary-container p{
+  width: 50%;
+}
+
 .summary-container input{
+  width: 50%;
   height: 20%;
   border-radius: 5px;
   padding: 1%;
@@ -525,7 +530,7 @@ body{
     width: 40%;
   }
   #results{
-    height: 100% !important;
+    height: 90% !important;
   }
 }
 
@@ -636,12 +641,12 @@ body{
 }
 /*----------  LandScape  ----------*/
 
-@media screen and (max-width: 1000px) and (orientation: landscape) {
+@media screen and (max-width: 1024px) and (orientation: landscape) {
   .summary-container input{
-    width: 40%;
+    width: 50%;
   }
   .summary-container p{
-    width: 40%;
+    width: 50%;
   }
 }
 

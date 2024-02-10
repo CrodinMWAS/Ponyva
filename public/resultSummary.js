@@ -18,7 +18,7 @@ export function showSummary(DataObject, questionArray) {
     hideUserInput()
 
     chatbox.style.display = 'none';
-    document.getElementById('help').style.display = 'flex';
+    document.getElementById('help').style.display = 'none';
 
     let summaryText = '';
     Object.keys(DataObject).forEach((key, index) => {
@@ -52,7 +52,6 @@ export function showSummary(DataObject, questionArray) {
         isEditable = false
 
         chatbox.style.display = 'block';
-        document.getElementById('help').style.display = 'none';
 
         setIsOptionSelected(false);
         const URL = "http://localhost:8080/"
