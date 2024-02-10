@@ -241,15 +241,13 @@ export function askNextQuestion() {
   switch (currentQuestions) {
     case freeMeasurementQuestions:
       showSummary(measurementDatasArray, freeMeasurementQuestions)
-
       break;
     case supportQuestions:
       showSummary(supportDataArray, supportQuestions)
-
+      console.log(`showSummary(${supportDataArray}, supportQuestions)`)
       break;
     case interestQuestions:
       showSummary(interestDataArray, interestQuestions)
-
       break;
   }
 }

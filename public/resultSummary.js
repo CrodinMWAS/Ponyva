@@ -43,29 +43,30 @@ export function showSummary(DataObject, questionArray) {
     var newInputValues = []
     editButton.addEventListener("click", () => {
         console.log(DataObject)
-        isEditable ? (editButton.style.backgroundColor = 'transparent', editButton.style.color = 'black') : (editButton.style.backgroundColor = 'black', editButton.style.color = 'white');
-        if (isEditable) {
-            inputs.forEach(input => newInputValues.push(input.value));
-        }
-        
+        isEditable ? (editButton.style.backgroundColor = 'transparent', editButton.style.color = 'black',inputs.forEach(input => newInputValues.push(input.value))) : (editButton.style.backgroundColor = 'black', editButton.style.color = 'white');
+
+        inputs.forEach(input => input.classList.toggle("enabledInput"));
         inputs.forEach(input => input.readOnly = isEditable);
         isEditable = !isEditable
     })
     
     doneButton.addEventListener('click', () => {
+        editButton.style.backgroundColor = 'transparent'
+        editButton.style.color = 'black'
+
+        inputs.forEach(input => input.classList.remove("enabledInput"));
+        inputs.forEach(input => input.readOnly = true);
+        isEditable = false
         setIsOptionSelected(false);
         const URL = "http://localhost:8080/"
         switch(DataObject) {
             case measurementDatasArray: 
-                console.log("freeAsd")
                 sendJsonData(measurementDatasArray, URL, "setMeasurementData")
                 break;
             case supportDataArray:
-                console.log("supAssd")
                 sendJsonData(supportDataArray, URL, "setSupportData")
                 break;
             case interestDataArray:
-                console.log("interestASD");
                 sendJsonData(interestDataArray, URL, "setInterestData")
                 break;
         }

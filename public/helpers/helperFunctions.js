@@ -17,7 +17,7 @@ function enforcePhoneNumberFormat(event) {
 export function transformToPhoneInput(inputField) {
     inputField.type = 'tel';
     inputField.maxLength = 12;
-    inputField.placeholder = 'Enter phone number';
+    inputField.value = '+36';
     inputField.className
     // Additional logic to ensure that +36 is always present
     inputField.addEventListener('input', enforcePhoneNumberFormat);

@@ -399,6 +399,7 @@ body{
   box-sizing: border-box;
   overflow-y: scroll;
   min-height: 35px;
+  position: relative;
 }
 
 .summary-container{
@@ -412,6 +413,14 @@ body{
   height: 20%;
   border-radius: 5px;
   padding: 1%;
+  background-color: var(--greyColor);
+  transition: all 0.3s ease-in-out;
+  cursor: not-allowed;
+}
+
+.enabledInput{
+  background-color: var(--whiteColor) !important;
+  cursor: pointer !important;
 }
 
 #results #buttons{
@@ -419,10 +428,6 @@ body{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
-
-#buttons #editButton{
-  position: relative;
 }
 
 #results #sendButton{
