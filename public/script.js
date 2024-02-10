@@ -260,9 +260,10 @@ export function newChat(DataObject){
   currentQuestions = menuQuestions;
   isOptionSelected = false;
   isWriting = false;
-  document.getElementById("chatbox").appendChild(document.getElementsByClassName("typing-animation")[0])
+  chatbox.appendChild(document.getElementsByClassName("typing-animation")[0])
   while (chatContent.firstChild) {
       chatContent.removeChild(chatContent.firstChild);
   }
+  chatbox.style.display = 'none';
   showChat();
 }
