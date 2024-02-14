@@ -27,3 +27,7 @@ Egyértelműsítés: Ha telefonszámot kér be a bot, akkor eleve megjelenik a "
 Új Funkció: Chat Bezár az összegző mutatásakor, és megnyílik amikor leadjuk.
 Új Gomb hozzáadása: Összegző Gomb bekerül a chatbe és az összegzőt fogja felhozni.
 Új Funkció: Új chat létrehozása azután hogy leadtuk az összegzőt.
+
+Kérdés: újra megjelenő beküldő gomb
+
+Github: https://github.com/CrodinMWAS/Ponyva
